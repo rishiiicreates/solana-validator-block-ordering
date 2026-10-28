@@ -128,6 +128,7 @@ export interface SlotTelemetry {
   parentSlot: number;
   blockTime: number | null;
   leader: string;
+  validatorName?: string;
   clientType: ClientImplementation;
   summary: {
     totalTransactions: number;

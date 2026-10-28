@@ -4,7 +4,8 @@
   "parentSlot": 462549862,
   "blockTime": 1793206149,
   "leader": "11AMA4mnNbsrPQeuoNN7uiZVJZtqEzQHrTfa5vnbcjk",
-  "clientType": "unknown",
+  "validatorName": "Validator 11AMA (Agave)",
+  "clientType": "agave",
   "summary": {
     "totalTransactions": 328,
     "successfulTransactions": 237,

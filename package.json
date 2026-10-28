@@ -12,6 +12,7 @@
     "build": "tsc",
     "start": "tsx src/cli.ts",
     "verify": "tsx scripts/verify.ts",
+    "collect:6": "tsx scripts/collect-6-validators.ts",
     "test": "tsx scripts/verify.ts --dry-run",
     "clean": "rm -rf dist"
   },

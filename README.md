@@ -4,6 +4,29 @@ A high-performance TypeScript measurement and telemetry suite for analyzing Sola
 
 ---
 
+## Deliverables & Documentation
+
+- **[Empirical Telemetry Report (`REPORT.md`)](REPORT.md)**: Full measurement findings across 6 mainnet validators and 3 client architectures (Agave, Jito-Solana, Firedancer), including comparative tables, Spearman rank metrics, conflicting inversion analysis, and the required "What Went Wrong" post-mortem.
+- **[Protocol Internals Guide (`docs/ORDERING_MECHANICS.md`)](docs/ORDERING_MECHANICS.md)**: Exhaustive architectural breakdown of Agave BankingStage DAG scheduling, Jito-Solana bundle preemption, and Firedancer knapsack greedy packing.
+- **[Reproducible Telemetry Dataset (`data/`)](data/)**: Raw on-chain blocks, account contention matrices, and multi-validator summary benchmarks.
+
+---
+
+## 6-Validator Mainnet Empirical Benchmark
+
+The measurement suite analyzes confirmed Mainnet-Beta blocks across 6 prominent validators:
+
+| Validator Name | Client Implementation | Leader Node Pubkey | Sampled Slot |
+| :--- | :--- | :--- | :--- |
+| **Jump Crypto** | **Firedancer** | `Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk` | 462554210 |
+| **Helius** | **Jito-Solana** | `HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU` | 462554176 |
+| **Chorus One** | **Jito-Solana** | `DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy` | 462554123 |
+| **Jupiter Validator** | **Agave** | `JUPiTERrZqgf1jUyR7dSkhMx4Kn2qJyekWsg3LT1h4b` | 462554084 |
+| **Coinbase Cloud** | **Agave** | `CAo1dCGYrB6NhHh5xb1cGjUiu86iyCfMTENxgHumSve4` | 462554159 |
+| **Validator 11AMA** | **Agave** | `11AMA4mnNbsrPQeuoNN7uiZVJZtqEzQHrTfa5vnbcjk` | 462549863 |
+
+---
+
 ## Capabilities
 
 - **Cluster & Leader Discovery**: Connects to Solana RPC (Mainnet/Devnet), queries `getLeaderSchedule` and `getEpochInfo`, and isolates slots assigned to target validators across distinct client implementations (standard Agave, Jito-Solana, Firedancer/Frankendancer).
@@ -50,7 +73,13 @@ cp .env.example .env
 
 ## CLI Usage
 
-### 1. Run Verification Suite (End-to-End)
+### 1. Run 6-Validator Mainnet Benchmark (Across 3 Client Implementations)
+Fetches confirmed blocks from Jump Crypto (Firedancer), Helius (Jito), Chorus One (Jito), Jupiter (Agave), Coinbase Cloud (Agave), and Validator 11AMA (Agave):
+```bash
+npm run collect:6
+```
+
+### 2. Run Verification Suite (End-to-End Testbench)
 Fetches live Solana mainnet slots, computes all metrics, verifies invariants, and exports telemetry to `data/`:
 ```bash
 npm run verify

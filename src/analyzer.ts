@@ -46,7 +46,8 @@ export class BlockAnalyzer {
     slot: number,
     block: VersionedBlockResponse,
     leader: string,
-    clientType: ClientImplementation = 'unknown'
+    clientType: ClientImplementation = 'unknown',
+    validatorName?: string
   ): SlotTelemetry {
     const transactions = this.parseTransactions(block);
     const jitoBundles = this.detectJitoBundles(transactions);
@@ -96,6 +97,7 @@ export class BlockAnalyzer {
           ? Number(block.blockTime)
           : null,
       leader,
+      validatorName,
       clientType,
       summary: {
         totalTransactions: transactions.length,

@@ -38,47 +38,65 @@ export interface KnownValidatorMetadata {
 }
 
 export const KNOWN_VALIDATORS: KnownValidatorMetadata[] = [
-  // Jito-Solana validators
-  {
-    identity: 'HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU',
-    name: 'Helius',
-    client: 'jito',
-    notes: 'Major RPC & validator running Jito MEV client',
-  },
-  {
-    identity: 'DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy',
-    name: 'Chorus One',
-    client: 'jito',
-    notes: 'Institutional validator running Jito-Solana',
-  },
-  {
-    identity: 'Certusm1daqq8eBNV8MD5n6Q56nUbVp4f6qM8u5d8rB5',
-    name: 'Shinobi Systems',
-    client: 'jito',
-    notes: 'High-performance validator running Jito MEV',
-  },
-  {
-    identity: 'J1tovipLqq93cEw3f9u9zB4f2tYJk139k9xT9n5N8d1',
-    name: 'Jito Foundation',
-    client: 'jito',
-    notes: 'Official Jito Foundation validator',
-  },
-  {
-    identity: 'Cogent5nL5L5p4GzY3H6iV6h5Q5n5K5h5W5j5X5Y5Z5',
-    name: 'Cogent Crypto',
-    client: 'jito',
-    notes: 'Jito-Solana validator',
-  },
-
   // Firedancer / Frankendancer validators
   {
     identity: 'Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk',
     name: 'Jump Crypto (Firedancer)',
     client: 'firedancer',
-    notes: 'Running Frankendancer / Firedancer hybrid engine',
+    notes: 'Frankendancer / Firedancer high-throughput engine by Jump Crypto',
   },
 
-  // Standard Agave (Solana Labs) validators
+  // Jito-Solana validators
+  {
+    identity: 'HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU',
+    name: 'Helius (Jito-Solana)',
+    client: 'jito',
+    notes: 'Major RPC & validator running Jito MEV client with bundle engine',
+  },
+  {
+    identity: 'DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy',
+    name: 'Chorus One (Jito-Solana)',
+    client: 'jito',
+    notes: 'Institutional validator running Jito-Solana bundle architecture',
+  },
+  {
+    identity: 'C8Bey3LKVJHVqN6xPTeW8WJfUgFQAeGNBpT4Rp99JP1k',
+    name: 'Staking Validator C8Bey (Jito-Solana)',
+    client: 'jito',
+    notes: 'Tier-1 validator running Jito-Solana MEV',
+  },
+  {
+    identity: 'Certusm1daqq8eBNV8MD5n6Q56nUbVp4f6qM8u5d8rB5',
+    name: 'Shinobi Systems (Jito-Solana)',
+    client: 'jito',
+    notes: 'High-performance validator running Jito MEV',
+  },
+  {
+    identity: 'J1tovipLqq93cEw3f9u9zB4f2tYJk139k9xT9n5N8d1',
+    name: 'Jito Foundation (Jito-Solana)',
+    client: 'jito',
+    notes: 'Official Jito Foundation validator node',
+  },
+
+  // Agave (Solana Labs) validators
+  {
+    identity: 'JUPiTERrZqgf1jUyR7dSkhMx4Kn2qJyekWsg3LT1h4b',
+    name: 'Jupiter Validator (Agave)',
+    client: 'agave',
+    notes: 'Official Jupiter routing validator running Agave client',
+  },
+  {
+    identity: 'CAo1dCGYrB6NhHh5xb1cGjUiu86iyCfMTENxgHumSve4',
+    name: 'Coinbase Cloud (Agave)',
+    client: 'agave',
+    notes: 'Enterprise validator running Agave consensus client',
+  },
+  {
+    identity: '11AMA4mnNbsrPQeuoNN7uiZVJZtqEzQHrTfa5vnbcjk',
+    name: 'Validator 11AMA (Agave)',
+    client: 'agave',
+    notes: 'High-stake validator running Agave 26.10.x',
+  },
   {
     identity: '7Np41oeYqPefeNQEHSv1UDhYrehxin3NStELsSKCT4K2',
     name: 'Everstake (Agave)',
@@ -86,10 +104,10 @@ export const KNOWN_VALIDATORS: KnownValidatorMetadata[] = [
     notes: 'Standard Agave validator client',
   },
   {
-    identity: 'Agave11111111111111111111111111111111111111',
-    name: 'Reference Agave Validator',
+    identity: 'E1r4Psq84tHfQ6aPTvvDka4U3u8zPVD7gEUrH25RdxHL',
+    name: 'Validator E1r4 (Agave)',
     client: 'agave',
-    notes: 'Standard Agave reference',
+    notes: 'Standard Agave validator node',
   },
 ];
 
