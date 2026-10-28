@@ -1,0 +1,40 @@
+{
+  "name": "solana-block-ordering",
+  "version": "1.0.0",
+  "description": "Solana block ordering, priority fee ranking, account lock conflict graph, and Jito MEV bundle measurement suite",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "solana-block-ordering": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/cli.ts",
+    "verify": "tsx scripts/verify.ts",
+    "test": "tsx scripts/verify.ts --dry-run",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "solana",
+    "mev",
+    "jito",
+    "priority-fee",
+    "block-ordering",
+    "scheduler",
+    "telemetry"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^3.1.1",
+    "chalk": "^6.0.1",
+    "commander": "^15.0.0",
+    "dotenv": "^18.0.9"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
